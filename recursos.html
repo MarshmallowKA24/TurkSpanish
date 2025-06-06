@@ -1,0 +1,52 @@
+<%- include('_header') %>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">...</nav>
+
+    <!-- Usa las clases del CSS de recursos -->
+    <section class="resources">
+        <h2>Recursos de Aprendizaje</h2>
+        
+        <div class="filters">
+            <select id="category">
+                <option value="all">Todos</option>
+                <option value="pdf">PDFs</option>
+                <option value="audio">Música</option>
+            </select>
+        </div>
+
+        <div class="resource-grid">
+            <div class="item pdf">
+                <a href="media/pdfs/gramatica-basica.pdf" download>
+                    <img src="media/images/pdf-icon.png" alt="PDF">
+                    <p>Gramática Básica</p>
+                </a>
+            </div>
+            <div class="item audio">
+                <audio controls>
+                    <source src="media/music/estambul-nocturno.mp3" type="audio/mpeg">
+                </audio>
+                <p>Estambul Nocturno</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-wave">...</footer>
+</body>
+</html>
+<script>
+    // Filtro de recursos
+    document.getElementById('category').addEventListener('change', e => {
+        const category = e.target.value;
+        document.querySelectorAll('.item').forEach(item => {
+            item.style.display = category === 'all' || item.classList.contains(category) 
+                ? 'block' 
+                : 'none';
+        });
+    });
+    </script>
+<script src="/js/main.js"></script>    
