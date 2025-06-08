@@ -1,13 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <title>Recursos de Aprendizaje Turco</title>
 </head>
 <body>
     <nav class="navbar">...</nav>
 
-    <!-- Usa las clases del CSS de recursos -->
     <section class="resources">
         <h2>Recursos de Aprendizaje</h2>
         
@@ -21,11 +21,77 @@
 
         <div class="resource-grid">
             <div class="item pdf">
-                <a href="media/pdfs/gramatica-basica.pdf" download>
-                    <img src="media/images/pdf-icon.png" alt="PDF">
-                    <p>Gramática Básica</p>
-                </a>
+                <p>Clase Nivel B1</p>
+                <iframe src="https://github.com/MarshmallowKA24/TurkSpanish/raw/main/pdfs/B1CLASS.pdf" 
+                        width="100%" 
+                        height="500px" 
+                        style="border: none;"
+                        title="Visualizador de PDF Clase Nivel B1">
+                    <p>Su navegador no soporta PDFs. <a href="https://github.com/MarshmallowKA24/TurkSpanish/raw/main/pdfs/B1CLASS.pdf" download="B1CLASS.pdf">Descargue el PDF aquí</a>.</p>
+                </iframe>
+                <a href="https://github.com/MarshmallowKA24/TurkSpanish/raw/main/pdfs/B1CLASS.pdf" download="B1CLASS.pdf">Descargar PDF</a>
             </div>
+
+            <div class="item pdf">
+                <p>Trabajo Nivel B1</p>
+                <iframe src="https://github.com/MarshmallowKA24/TurkSpanish/raw/main/pdfs/B1WORK.pdf" 
+                        width="100%" 
+                        height="500px" 
+                        style="border: none;"
+                        title="Visualizador de PDF Trabajo Nivel B1">
+                    <p>Su navegador no soporta PDFs. <a href="https://github.com/MarshmallowKA24/TurkSpanish/raw/main/pdfs/B1WORK.pdf" download="B1WORK.pdf">Descargue el PDF aquí</a>.</p>
+                </iframe>
+                <a href="https://github.com/MarshmallowKA24/TurkSpanish/raw/main/pdfs/B1WORK.pdf" download="B1WORK.pdf">Descargar PDF</a>
+            </div>
+
+            <div class="item pdf">
+                <p>Clase Nivel B2</p>
+                <iframe src="https://github.com/MarshmallowKA24/TurkSpanish/raw/main/pdfs/B2CLASS.pdf" 
+                        width="100%" 
+                        height="500px" 
+                        style="border: none;"
+                        title="Visualizador de PDF Clase Nivel B2">
+                    <p>Su navegador no soporta PDFs. <a href="https://github.com/MarshmallowKA24/TurkSpanish/raw/main/pdfs/B2CLASS.pdf" download="B2CLASS.pdf">Descargue el PDF aquí</a>.</p>
+                </iframe>
+                <a href="https://github.com/MarshmallowKA24/TurkSpanish/raw/main/pdfs/B2CLASS.pdf" download="B2CLASS.pdf">Descargar PDF</a>
+            </div>
+
+            <div class="item pdf">
+                <p>Trabajo Nivel B2</p>
+                <iframe src="https://github.com/MarshmallowKA24/TurkSpanish/raw/main/pdfs/B2WORK.pdf" 
+                        width="100%" 
+                        height="500px" 
+                        style="border: none;"
+                        title="Visualizador de PDF Trabajo Nivel B2">
+                    <p>Su navegador no soporta PDFs. <a href="https://github.com/MarshmallowKA24/TurkSpanish/raw/main/pdfs/B2WORK.pdf" download="B2WORK.pdf">Descargue el PDF aquí</a>.</p>
+                </iframe>
+                <a href="https://github.com/MarshmallowKA24/TurkSpanish/raw/main/pdfs/B2WORK.pdf" download="B2WORK.pdf">Descargar PDF</a>
+            </div>
+
+            <div class="item pdf">
+                <p>Clase Nivel C1</p>
+                <iframe src="https://github.com/MarshmallowKA24/TurkSpanish/raw/main/pdfs/C1CLASS.pdf" 
+                        width="100%" 
+                        height="500px" 
+                        style="border: none;"
+                        title="Visualizador de PDF Clase Nivel C1">
+                    <p>Su navegador no soporta PDFs. <a href="https://github.com/MarshmallowKA24/TurkSpanish/raw/main/pdfs/C1CLASS.pdf" download="C1CLASS.pdf">Descargue el PDF aquí</a>.</p>
+                </iframe>
+                <a href="https://github.com/MarshmallowKA24/TurkSpanish/raw/main/pdfs/C1CLASS.pdf" download="C1CLASS.pdf">Descargar PDF</a>
+            </div>
+
+            <div class="item pdf">
+                <p>Trabajo Nivel C1</p>
+                <iframe src="https://github.com/MarshmallowKA24/TurkSpanish/raw/main/pdfs/C1WORK.pdf" 
+                        width="100%" 
+                        height="500px" 
+                        style="border: none;"
+                        title="Visualizador de PDF Trabajo Nivel C1">
+                    <p>Su navegador no soporta PDFs. <a href="https://github.com/MarshmallowKA24/TurkSpanish/raw/main/pdfs/C1WORK.pdf" download="C1WORK.pdf">Descargue el PDF aquí</a>.</p>
+                </iframe>
+                <a href="https://github.com/MarshmallowKA24/TurkSpanish/raw/main/pdfs/C1WORK.pdf" download="C1WORK.pdf">Descargar PDF</a>
+            </div>
+
             <div class="item audio">
                 <audio controls>
                     <source src="media/music/estambul-nocturno.mp3" type="audio/mpeg">
@@ -36,17 +102,18 @@
     </section>
 
     <footer class="footer-wave">...</footer>
+
+    <script>
+        // Filtro de recursos
+        document.getElementById('category').addEventListener('change', e => {
+            const category = e.target.value;
+            document.querySelectorAll('.item').forEach(item => {
+                item.style.display = category === 'all' || item.classList.contains(category) 
+                    ? 'block' 
+                    : 'none';
+            });
+        });
+    </script>
+    <script src="/js/main.js"></script>
 </body>
 </html>
-<script>
-    // Filtro de recursos
-    document.getElementById('category').addEventListener('change', e => {
-        const category = e.target.value;
-        document.querySelectorAll('.item').forEach(item => {
-            item.style.display = category === 'all' || item.classList.contains(category) 
-                ? 'block' 
-                : 'none';
-        });
-    });
-    </script>
-<script src="/js/main.js"></script>    
